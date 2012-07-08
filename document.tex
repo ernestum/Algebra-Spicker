@@ -1,0 +1,268 @@
+%Kleiner Text, zweispaltig
+\documentclass[twocolumn, 10pt]{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+%Mathe symbole
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Ränder Anpassen 
+\usepackage{scrextend}
+\usepackage[hmargin=.3cm,vmargin=1.2cm,showframe=false]{geometry}
+
+%Abstand zwischen Listeneinträgen verringern
+\usepackage{enumitem}
+\setlist{parsep=-.3em}
+%\setlist{itemsep=-.5em}
+
+ 
+ 
+%Definitionsumgebung
+\newenvironment {definition}
+                [1][]
+                {\noindent\\{\bf
+                Def:}\emph{
+                #1}\indent\begin{addmargin}{.5em}}{\end{addmargin}}
+
+%Schönere Befehle für logische operatoren
+\newcommand{\und}{\wedge}
+\newcommand{\oder}{\vee}
+
+\begin{document}
+
+\title{Algebra Cheat Sheet}
+\maketitle
+
+
+
+\subsection*{Permutationen}
+
+{\tiny Seite 41}
+\begin{definition}[Permutation]
+Ist eine bijektive Abbildung $\alpha:X\rightarrowX$.\\
+$S_X := $ Menge aller Permutationen von X\\
+$S_n := $ $S_X$ mit $X=\{1, 2,\ldots,n\}$
+\end{definition}
+
+\begin{definition}[r-Zykel]
+Seien $i_1,\ldots,i_r \in \{1, 2,\ldots,n\}$ paarweise verschieden.\\
+Ein Zykel der Länge r ist dann $\alpha:=(i_1i_2\ldotsi_r) \in S_n$ \\mit
+$\alpha(i_1)=i_2$, $\alpha(i_2)=i_3$, \ldots $\alpha(i_r)=i_1$.
+$(a_0a_1a_2a_3a_4) \rightarrow (a_4a_1a_2a_3a_0)$
+\end{definition}
+
+\begin{definition}[Transposition]
+Ein 2-Zykel
+\end{definition}
+
+
+
+\subsection*{Morphismen}
+
+{\tiny Seite 50}
+\begin{definition}[Homomorphismus/Morphismus]
+Gegeben sind zwei Halbrguppen: $(G, \times)$, $(H, \#)$. Die Abbildung
+$f:G \rightarrow H$ ist ein Homomorphismus, wenn
+$f(a\timesb)=f(a)\#f(b)\hspace{.5cm}\forall a,b \in G$.
+\end{definition}
+
+\begin{definition}[Monomorphismus]
+Ein injektiver Homomorphismus
+\end{definition}
+
+\begin{definition}[Epimorphismus]
+Ein surjektiver Homomorphismus
+\end{definition}
+
+\begin{definition}[Isomorphismus]
+Ein bijektiver Homomorphismus
+\end{definition}
+
+\begin{definition}[Automorphismus]
+$f:G \rightarrow G$, $f$ injektiv: beide Halbgruppen sind gleich.
+\end{definition}
+
+
+
+\subsection*{Misc}
+\begin{definition}[injektiv]
+$f(a)=f(a') \Rightarrow a=a'$ \glqq für jedes x max. ein y\grqq\\
+$f:A\rightarrow B$ ist \emph{injektiv} genau dann wenn $\forall b \in B:
+|f^-1(\{b\})| \leq 1$
+\end{definition}
+
+\begin{definition}[surjektiv]
+$\forall b \in B, \exists a \in A: b = f(a)$ \glqq die gesamte Bildmenge ist
+erreichbar\grqq
+\end{definition}
+
+\begin{definition}[bijektiv]
+Injektiv und Surjektiv zusammen.
+\end{definition}
+
+\begin{definition}[Bild]
+$f^-1(C):{a \in A: f(a) \in C}$
+\end{definition}
+
+
+
+\subsection*{Gruppen}
+
+\begin{definition}[Halbgruppe (s. 37)]
+\begin{itemize}
+  \item Trägermenge G
+  \item Abbildung: $G \times G \rightarrow G$, assoziativ
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Monoid (s. 37)]
+\begin{itemize}
+  \item Trägermenge G
+  \item Abbildung: $G \times G \rightarrow G$, assoziativ, kann kommutativ
+  (abelsch) sein
+  \item Neutrales Element $a^0 = e$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Gruppe (s. 47)]
+\begin{itemize}
+  \item Trägermenge G
+  \item Abbildung: $G \times G \rightarrow G$, assoziativ, kann kommutativ
+  (abelsch) sein
+  \item Neutrales Element $a^0 = e$
+  \item Inverses Element $a^-1$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Ring (s. 85)]
+\begin{itemize}
+  \item Trägermenge G
+  \item Abbildungen
+  	\begin{enumerate}
+    	\item $"+": G\timesG \rightarrow G$, assoziativ, distributiv, kommutativ,
+    	neutrales Element \glqq 0\grqq, inverses Element \glqq -a\grqq
+    	\item $"\cdot": G\timesG \rightarrow G$, assoziativ, distributiv, optional
+    	kommutativ, optinal neutrales Element $\neq 0$ (\glqq Einselement\grqq),
+    	optional inverses Element (\glqq Einheit\grqq)
+  	\end{enumerate}
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Körper (Wikipedia)]
+\begin{itemize}
+  \item Trägermenge G
+  \item Abbildungen
+  	\begin{enumerate}
+    	\item $"+": G\timesG \rightarrow G$, assoziativ, distributiv, kommutativ,
+    	neutrales Element \glqq 0\grqq, inverses Element \glqq -a\grqq
+    	\item $"\cdot": G\timesG \rightarrow G$, assoziativ, distributiv, kommutativ, neutrales Element $\neq 0$ (\glqq Einselement\grqq),
+    	inverses Element (\glqq Einheit\grqq)
+  	\end{enumerate}
+\end{itemize}
+\end{definition}
+
+
+
+\subsection*{Verbände und Boolsche Algebren}
+
+\begin{definition}[Teilweise geordnete Menge (s. 10)]
+Eine Menge ist teilweise Geordnet, wenn auf ihr eine Relation $\leq$ existiert,
+die \begin{itemize}
+  \item reflexiv ($a\leq a$)
+  \item antisymmetrisch ($a \leq b \text{und} b\leq a \Rightarrow b = a$)
+  \item transitiv ($a\leq b \text{und} b\leq c \Rightarrow a\leq c$)
+\end{itemize}}
+ist. Die Relation $<$ bedeutet dann $\leq$ und $a\neq b$.
+\end{definition}
+
+\begin{definition}[Total geordnete Menge/Kette (s. 10)]
+Eine Menge ist total geordnet, wenn sie Teilweise geordnet ist und für alle
+Elemente x, y der Menge gillt entweder $x \leq y$ oder $y \leq x$.
+\end{definition}
+
+\begin{definition}[Speziele Elemente in teilweise geordneten Mengen (s. 10)]
+Sei $(P, \leq)$ teilweise geordnet, $X \subset P$, $X \neq \emptyset$
+\begin{enumerate}
+  \item $y \in X$ ist \emph{minimal}, wenn $\forall x \in X: x > y$
+  \item $y \in X$ ist \emph{kleinstes Element}, wenn $\forall x \in X: y \leq x$ 
+  \item $y \in P$ ist \emph{untere Schranke} von $X$, wenn $\forall x \in X: y
+  \leq x$
+  \item $y \in P$ ist \emph{größte Untere Schranke} von $X$, wenn $y$ größtes
+  Element in der Menge der unteren schranken ist.
+\end{enumerate}
+Bei total geordneten mengen gillt:\\\indent \emph{minimales Element} =
+\emph{kleinstes Element}
+\end{definition}
+
+\begin{definition}[Verband (s. 16)]
+Ein Verband ist eine teilweise geodnete Menge. je zwei Elemente x, y der Menge
+haben:
+\begin{itemize}
+  \item Durchschnitt $:= x \und y :=Min\{x, y\}:=$ größte untere Schranke von
+  \{x, y\}, falls sie existiert.
+  \item Vereinigung $:=x\oder y :=Max\{x, y\}:=$ kleinste obere Schranke von
+  \{x, y\}, falls sie existiert.
+\end{itemize}
+\emph{Rechenregeln:}
+\begin{itemize}
+  \item $x \und x = x$, $x \oder x = x$
+  \item $(x \und y) \und z = x \und (y \und z)$, $(x \oder y) \oder z = x \oder (y
+  \oder z)$
+  \item $x \und y = y \und x$, $x \oder y = y \oder x$
+  \item $x \und (x \oder y) = x$, $x \oder (x \und y) = x$
+  \item $x \leq y \Leftrightarrow x \und y = x \Leftrightarrow x\oder y = y$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Boolsche Algebra (s. 17)]
+Notation $\mathfrak{A}=(A, \und, \oder, ', 0, 1)$
+\begin{itemize}
+  \item Trägermenge $A$
+  \item Abbildungen: $\und, \oder: A\times A \rightarrow A$, assoziativ,
+  kommutativ, distributiv
+  \item Abbildung: $': A \rightarrow A$
+  \item Neutrale/Inverse Elemente: $0, 1 \in A$
+  \item \emph{Rechenregeln:}\begin{itemize}
+    \item $x \oder x = x$, $x \und x = x$
+    \item $x \oder (x \und y) = x$, $x \und (x \oder y) = x$
+    \item $x \oder 0 = x$, $x \und 0 = 0$
+    \item $x \oder 1 = 1$, $x \und 1 = x$
+    \item $x \oder x' = 1$, $x \und x' = 0$
+  \end{itemize}
+  \item \emph{Es folgt:} \begin{itemize}
+    \item $x \oder y = 1$ und $x \und y = 0$ $\Longrightarrow$ $y = x'$
+    \item $(x \oder y)' = x' \und y'$ (de Morgan)
+    \item $(x \und y)' = x' \oder y'$ (de Morgan)
+  \end{itemize}
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Boolscher Term]
+\begin{itemize}
+  \item jedes $X_1, X_2,\ldots ,X_n$ ist ein Boolscher Term
+  \item Wenn $P$, $Q$ Boolsche Terme sind, so auch $P'$, $(P\und Q)$, $(P
+  \oder Q)$
+\end{itemize}
+\end{definition}
+
+\subsection*{Äquivalenzrelationen}
+
+
+
+\begin{definition}[Äquivalenzrelation (s. 7)]
+Eine Äquivalenzrelation ist eine Relation, die 
+\begin{itemize}
+  \item reflexiv ($aRa$)
+  \item symmetrisch ($aRb \Rightarrow bRa$)
+  \item transitiv ($aRb \und bRc \Rightarrow aRc$)
+\end{itemize}
+ist.
+\end{definition}
+
+\begin{definition}[Äquivalenzklasse (s. 7)]
+$(a)$ bezeichnet die Äquivalenzklasse zu a bezgl. der Äquivalenzrelation R und
+ist definiert als $(a) = \{b \in A: aRb\}$
+\end{definition}
+\end{document}
